@@ -12,14 +12,21 @@ public class Triangle {
     }
 
     public Type classify() {
-        if (side1 != side2 && side1 != side3 && side2 != side3) {
+        if (isScalene()) {
             return Type.SCALENE;
-        } else
-        if (side1 == side2 && side1 == side3 && side2 == side3) {
+        } else if (isEquilateral()) {
             return Type.EQUILATERAL;
         } else {
             return Type.ISOSCELES;
         }
+    }
+
+    private boolean isEquilateral() {
+        return side1 == side2 && side1 == side3 && side2 == side3;
+    }
+
+    private boolean isScalene() {
+        return side1 != side2 && side1 != side3 && side2 != side3;
     }
 
     public enum Type {ISOSCELES, EQUILATERAL, SCALENE}
