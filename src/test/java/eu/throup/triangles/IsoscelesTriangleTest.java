@@ -12,6 +12,7 @@ public class IsoscelesTriangleTest extends TriangleTest {
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
                 { 1   , 2   , 2   },
+                { 2   , 1   , 2   },
         });
     }
 
