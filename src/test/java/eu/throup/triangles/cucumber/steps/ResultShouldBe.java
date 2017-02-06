@@ -19,6 +19,10 @@ public class ResultShouldBe implements En {
                 case "isosceles":
                     expected = Triangle.Type.ISOSCELES;
                     break;
+
+                case "equilateral":
+                    expected = Triangle.Type.EQUILATERAL;
+                    break;
             }
             Assert.assertEquals(expected, helper.triangle.classify());
         });

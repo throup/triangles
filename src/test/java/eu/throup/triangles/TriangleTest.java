@@ -26,4 +26,10 @@ public class TriangleTest {
         Triangle triangle = new Triangle(1, 2, 2);
         Assert.assertEquals(Triangle.Type.ISOSCELES, triangle.classify());
     }
+
+    @Test
+    public void givenEquilateralTriangle_classify_returnsEquilateralType() {
+        Triangle triangle = new Triangle(1, 1, 1);
+        Assert.assertEquals(Triangle.Type.EQUILATERAL, triangle.classify());
+    }
 }

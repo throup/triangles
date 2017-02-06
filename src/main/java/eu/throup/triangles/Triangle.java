@@ -14,10 +14,12 @@ public class Triangle {
     public Type classify() {
         if (side2 != side3) {
             return Type.SCALENE;
-        } else {
+        } else if (side1 != side2) {
             return Type.ISOSCELES;
+        } else {
+            return Type.EQUILATERAL;
         }
     }
 
-    public enum Type {ISOSCELES, SCALENE}
+    public enum Type {ISOSCELES, EQUILATERAL, SCALENE}
 }
