@@ -2,12 +2,13 @@ package eu.throup.triangles.cucumber.steps;
 
 import cucumber.api.java8.En;
 import eu.throup.triangles.Triangle;
+import eu.throup.triangles.cucumber.TestHelper;
 
 public class ClassifyTheTriangle implements En {
-    public ClassifyTheTriangle() {
+    public ClassifyTheTriangle(TestHelper helper) {
         When("^I classify the triangle$", () -> {
             Triangle triangle = new Triangle(1, 2, 3);
-            triangle.classify();
+            helper.classification = triangle.classify();
         });
     }
 }

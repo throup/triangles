@@ -5,8 +5,8 @@ public class Triangle {
     }
 
     public Type classify() {
-        return null;
+        return Type.SCALENE;
     }
 
-    public enum Type {}
+    public enum Type {SCALENE}
 }

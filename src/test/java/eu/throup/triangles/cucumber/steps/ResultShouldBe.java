@@ -1,13 +1,14 @@
 package eu.throup.triangles.cucumber.steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java8.En;
+import eu.throup.triangles.Triangle;
+import eu.throup.triangles.cucumber.TestHelper;
+import org.junit.Assert;
 
 public class ResultShouldBe implements En {
-    public ResultShouldBe() {
+    public ResultShouldBe(TestHelper helper) {
         Then("^the result should be \"([^\"]*)\"$", (String arg1) -> {
-            // Write code here that turns the phrase above into concrete actions
-            throw new PendingException();
+            Assert.assertEquals(Triangle.Type.SCALENE, helper.classification);
         });
     }
 }
