@@ -1,13 +1,13 @@
 package eu.throup.triangles.cucumber.steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java8.En;
+import eu.throup.triangles.Triangle;
 
 public class ClassifyTheTriangle implements En {
     public ClassifyTheTriangle() {
         When("^I classify the triangle$", () -> {
-            // Write code here that turns the phrase above into concrete actions
-            throw new PendingException();
+            Triangle triangle = new Triangle(1, 2, 3);
+            triangle.classify();
         });
     }
 }
