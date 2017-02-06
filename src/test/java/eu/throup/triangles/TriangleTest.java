@@ -2,40 +2,32 @@ package eu.throup.triangles;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
-public class TriangleTest {
-    @Test
-    public void instantiate() {
-        new Triangle(1, 1, 1);
+import java.util.Arrays;
+import java.util.Collection;
+
+@RunWith(Parameterized.class)
+abstract public class TriangleTest {
+    @Parameterized.Parameters
+    public static Collection<Object[]> data() {
+        return Arrays.asList(new Object[][] {
+        });
     }
 
-    @Test
-    public void classify_returnsSomeType() {
-        Triangle triangle = new Triangle(1, 1, 1);
-        Triangle.Type type = triangle.classify();
-    }
+    @Parameterized.Parameter(0)
+    public double side1;
+    @Parameterized.Parameter(1)
+    public double side2;
+    @Parameterized.Parameter(2)
+    public double side3;
 
     @Test
-    public void givenScaleneTriangle_classify_returnsScaleneType() {
-        Triangle triangle = new Triangle(1, 2, 3);
-        Assert.assertEquals(Triangle.Type.SCALENE, triangle.classify());
+    public void test() {
+        Triangle triangle = new Triangle(side1, side2, side3);
+        Assert.assertEquals(getExpected(), triangle.classify());
     }
 
-    @Test
-    public void givenScaleneTriangleWithDoubleValues_classify_returnsScaleneType() {
-        Triangle triangle = new Triangle(1.23, 2.34, 3.45);
-        Assert.assertEquals(Triangle.Type.SCALENE, triangle.classify());
-    }
-
-    @Test
-    public void givenIsoscelesTriangle_classify_returnsIsoscelesType() {
-        Triangle triangle = new Triangle(1, 2, 2);
-        Assert.assertEquals(Triangle.Type.ISOSCELES, triangle.classify());
-    }
-
-    @Test
-    public void givenEquilateralTriangle_classify_returnsEquilateralType() {
-        Triangle triangle = new Triangle(1, 1, 1);
-        Assert.assertEquals(Triangle.Type.EQUILATERAL, triangle.classify());
-    }
+    protected abstract Triangle.Type getExpected();
 }
