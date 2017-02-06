@@ -14,6 +14,8 @@ public class IsoscelesTriangleTest extends TriangleTest {
                 { 1   , 2   , 2   },
                 { 2   , 1   , 2   },
                 { 2   , 2   , 1   },
+                { 0   , 1   , 1   }, // Degenerate, but still technically isosceles.
+                { 2   , 1   , 1   }, // Degenerate, but still technically isosceles.
         });
     }
 

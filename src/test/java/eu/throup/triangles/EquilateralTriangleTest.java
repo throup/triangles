@@ -12,6 +12,10 @@ public class EquilateralTriangleTest extends TriangleTest {
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
                 { 1   , 1   , 1   },
+                { 0   , 0   , 0   }, // Degenerate, but still technically equilateral.
+                { Double.MAX_VALUE,  Double.MAX_VALUE,  Double.MAX_VALUE},
+                { Double.MIN_VALUE,  Double.MIN_VALUE,  Double.MIN_VALUE},
+                { Double.MIN_NORMAL, Double.MIN_NORMAL, Double.MIN_NORMAL},
         });
     }
 
