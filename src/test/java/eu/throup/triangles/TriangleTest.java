@@ -20,4 +20,10 @@ public class TriangleTest {
         Triangle triangle = new Triangle(1, 2, 3);
         Assert.assertEquals(Triangle.Type.SCALENE, triangle.classify());
     }
+
+    @Test
+    public void givenIsoscelesTriangle_classify_returnsIsoscelesType() {
+        Triangle triangle = new Triangle(1, 2, 2);
+        Assert.assertEquals(Triangle.Type.ISOSCELES, triangle.classify());
+    }
 }

@@ -4,4 +4,5 @@ import eu.throup.triangles.Triangle;
 
 public class TestHelper {
     public Triangle.Type classification;
+    public Triangle triangle;
 }

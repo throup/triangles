@@ -1,13 +1,13 @@
 package eu.throup.triangles.cucumber.steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java8.En;
+import eu.throup.triangles.Triangle;
+import eu.throup.triangles.cucumber.TestHelper;
 
 public class HaveATriangleWithTwoEqualSides implements En {
-    public HaveATriangleWithTwoEqualSides() {
+    public HaveATriangleWithTwoEqualSides(TestHelper helper) {
         Given("^I have a triangle with two equal sides$", () -> {
-            // Write code here that turns the phrase above into concrete actions
-            throw new PendingException();
+            helper.triangle = new Triangle(1, 2, 2);
         });
     }
 }
