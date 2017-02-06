@@ -20,7 +20,7 @@ public class ResultShouldBe implements En {
                     expected = Triangle.Type.ISOSCELES;
                     break;
             }
-            Assert.assertEquals(expected, helper.classification);
+            Assert.assertEquals(expected, helper.triangle.classify());
         });
     }
 }

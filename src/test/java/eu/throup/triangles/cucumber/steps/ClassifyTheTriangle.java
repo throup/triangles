@@ -6,7 +6,7 @@ import eu.throup.triangles.cucumber.TestHelper;
 public class ClassifyTheTriangle implements En {
     public ClassifyTheTriangle(TestHelper helper) {
         When("^I classify the triangle$", () -> {
-            helper.classification = helper.triangle.classify();
+            // No action required.
         });
     }
 }
