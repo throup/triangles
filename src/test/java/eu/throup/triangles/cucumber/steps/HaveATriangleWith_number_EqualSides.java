@@ -9,15 +9,15 @@ public class HaveATriangleWith_number_EqualSides implements En {
         Given("^I have a triangle with (\\w+) equal sides$", (String number) -> {
             switch (number) {
                 case "no":
-                    helper.triangle = new Triangle(1, 2, 3);
+                    helper.triangle = new Triangle(1.23, 2.34, 3.45);
                     break;
 
                 case "two":
-                    helper.triangle = new Triangle(1, 2, 2);
+                    helper.triangle = new Triangle(1.23, 2.34, 2.34);
                     break;
 
                 case "three":
-                    helper.triangle = new Triangle(1, 1, 1);
+                    helper.triangle = new Triangle(1.23, 1.23, 1.23);
                     break;
             }
         });

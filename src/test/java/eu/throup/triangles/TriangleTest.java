@@ -22,6 +22,12 @@ public class TriangleTest {
     }
 
     @Test
+    public void givenScaleneTriangleWithDoubleValues_classify_returnsScaleneType() {
+        Triangle triangle = new Triangle(1.23, 2.34, 3.45);
+        Assert.assertEquals(Triangle.Type.SCALENE, triangle.classify());
+    }
+
+    @Test
     public void givenIsoscelesTriangle_classify_returnsIsoscelesType() {
         Triangle triangle = new Triangle(1, 2, 2);
         Assert.assertEquals(Triangle.Type.ISOSCELES, triangle.classify());
