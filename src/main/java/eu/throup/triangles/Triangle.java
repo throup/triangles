@@ -12,13 +12,23 @@ public class Triangle {
         this.side2 = side2;
         this.side3 = side3;
 
-        if (side1 < 0 || side2 < 0 || side3 < 0) {
+        validateSides();
+    }
+
+    private void validateSides() throws IllegalArgumentException {
+        if (!allSidesAreNonNegative()) {
             throw new NegativeSideException();
         }
 
         if (!satisfiesTriangleInequality()) {
             throw new ImpossibleTriangleException();
         }
+    }
+
+    private boolean allSidesAreNonNegative() {
+        return side1 >= 0
+            && side2 >= 0
+            && side3 >= 0;
     }
 
     private boolean satisfiesTriangleInequality() {
