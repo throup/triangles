@@ -1,4 +1,4 @@
-package eu.throup.triangles;
+package eu.throup.triangles.domain;
 
 import org.junit.Assert;
 import org.junit.Test;

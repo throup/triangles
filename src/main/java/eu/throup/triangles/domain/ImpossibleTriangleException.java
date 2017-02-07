@@ -1,4 +1,4 @@
-package eu.throup.triangles;
+package eu.throup.triangles.domain;
 
 public class ImpossibleTriangleException extends IllegalArgumentException {
     public ImpossibleTriangleException() {

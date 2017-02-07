@@ -1,4 +1,4 @@
-package eu.throup.triangles;
+package eu.throup.triangles.domain;
 
 public class NegativeSideException extends IllegalArgumentException {
     public NegativeSideException() {

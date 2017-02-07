@@ -1,4 +1,4 @@
-package eu.throup.triangles;
+package eu.throup.triangles.domain;
 
 import static java.lang.Double.isFinite;
 import static java.lang.Math.*;

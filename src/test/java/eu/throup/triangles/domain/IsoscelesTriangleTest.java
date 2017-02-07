@@ -1,4 +1,4 @@
-package eu.throup.triangles;
+package eu.throup.triangles.domain;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
