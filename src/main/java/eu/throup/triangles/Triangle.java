@@ -1,8 +1,6 @@
 package eu.throup.triangles;
 
-import static java.lang.Math.abs;
-import static java.lang.Math.max;
-import static java.lang.Math.ulp;
+import static java.lang.Math.*;
 
 public class Triangle {
     private final double side1;
@@ -14,9 +12,15 @@ public class Triangle {
         this.side2 = side2;
         this.side3 = side3;
 
-        if (side1 + side2 < side3 || side1 + side3 < side2 || side2 + side3 < side1) {
+        if (!satisfiesTriangleInequality()) {
             throw new IllegalArgumentException();
         }
+    }
+
+    private boolean satisfiesTriangleInequality() {
+        return (side1 + side2 >= side3)
+            && (side1 + side3 >= side2)
+            && (side2 + side3 >= side1);
     }
 
     public Type classify() {
