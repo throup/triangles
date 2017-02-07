@@ -22,3 +22,8 @@ Feature: Classifying triangles
     Given I have a triangle which does not satisfy the triangle equalibrium
      When I classify the triangle
      Then there should be an error
+
+  Scenario: Classifying a triangle with negative sides
+    Given I have a triangle with negative side lengths
+     When I classify the triangle
+     Then there should be an error
