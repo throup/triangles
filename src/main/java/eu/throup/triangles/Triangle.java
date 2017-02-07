@@ -1,5 +1,6 @@
 package eu.throup.triangles;
 
+import static java.lang.Double.isFinite;
 import static java.lang.Math.*;
 
 public class Triangle {
@@ -16,6 +17,10 @@ public class Triangle {
     }
 
     private void validateSides() throws IllegalArgumentException {
+        if (!allSidesAreFinite()) {
+            throw new NonFiniteSideException();
+        }
+
         if (!allSidesAreNonNegative()) {
             throw new NegativeSideException();
         }
@@ -23,6 +28,12 @@ public class Triangle {
         if (!satisfiesTriangleInequality()) {
             throw new ImpossibleTriangleException();
         }
+    }
+
+    private boolean allSidesAreFinite() {
+        return isFinite(side1)
+            && isFinite(side2)
+            && isFinite(side3);
     }
 
     private boolean allSidesAreNonNegative() {
