@@ -31,7 +31,7 @@ public class ImpossibleTriangleTest {
 
     @Test
     public void test() {
-        thrown.expect(IllegalArgumentException.class);
+        thrown.expect(ImpossibleTriangleException.class);
         new Triangle(side1, side2, side3);
     }
 }

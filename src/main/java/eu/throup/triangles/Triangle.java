@@ -17,7 +17,7 @@ public class Triangle {
         }
 
         if (!satisfiesTriangleInequality()) {
-            throw new IllegalArgumentException("Side lengths do not make a real triangle.");
+            throw new ImpossibleTriangleException();
         }
     }
 
