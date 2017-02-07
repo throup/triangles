@@ -4,4 +4,5 @@ import eu.throup.triangles.Triangle;
 
 public class TestHelper {
     public Triangle triangle;
+    public Exception exception;
 }
