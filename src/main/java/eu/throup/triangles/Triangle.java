@@ -1,5 +1,9 @@
 package eu.throup.triangles;
 
+import static java.lang.Math.abs;
+import static java.lang.Math.max;
+import static java.lang.Math.ulp;
+
 public class Triangle {
     private final double side1;
     private final double side2;
@@ -22,11 +26,16 @@ public class Triangle {
     }
 
     private boolean isEquilateral() {
-        return side1 == side2 && side1 == side3 && side2 == side3;
+        return sidesEqual(side1, side2) && sidesEqual(side1, side3) && sidesEqual(side2, side3);
     }
 
     private boolean isScalene() {
-        return side1 != side2 && side1 != side3 && side2 != side3;
+        return !sidesEqual(side1, side2) && !sidesEqual(side1, side3) && !sidesEqual(side2, side3);
+    }
+
+    private static boolean sidesEqual(double firstSide, double secondSide) {
+        double epsilon = max(ulp(firstSide), ulp(secondSide)) * 2;
+        return abs(firstSide - secondSide) < epsilon;
     }
 
     public enum Type {ISOSCELES, EQUILATERAL, SCALENE}

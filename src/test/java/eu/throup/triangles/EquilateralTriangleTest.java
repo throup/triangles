@@ -16,6 +16,7 @@ public class EquilateralTriangleTest extends TriangleTest {
                 { Double.MAX_VALUE,  Double.MAX_VALUE,  Double.MAX_VALUE},
                 { Double.MIN_VALUE,  Double.MIN_VALUE,  Double.MIN_VALUE},
                 { Double.MIN_NORMAL, Double.MIN_NORMAL, Double.MIN_NORMAL},
+                { 0.1 + 0.2        , 0.15 + 0.15      , 1.0/10 + 2.0/10  }, // Demonstrates floating point precision.
         });
     }
 
