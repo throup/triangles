@@ -10,7 +10,7 @@ public class ImpossibleTriangleTest {
 
     @Test
     public void test() {
-        thrown.expect(Exception.class);
+        thrown.expect(IllegalArgumentException.class);
 
         new Triangle(1, 1, 3);
     }
