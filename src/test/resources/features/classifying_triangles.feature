@@ -27,3 +27,8 @@ Feature: Classifying triangles
     Given I have a triangle with negative side lengths
      When I classify the triangle
      Then there should be an error: "Side lengths must be positive."
+
+  Scenario: Classifying a triangle with non-finite sides
+    Given I have a triangle with non-finite side lengths
+     When I classify the triangle
+     Then there should be an error: "Side lengths must be finite numbers."
