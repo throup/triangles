@@ -21,9 +21,9 @@ Feature: Classifying triangles
   Scenario: Classifying an impossible triangle
     Given I have a triangle which does not satisfy the triangle equalibrium
      When I classify the triangle
-     Then there should be an error
+     Then there should be an error: "Side lengths do not make a real triangle."
 
   Scenario: Classifying a triangle with negative sides
     Given I have a triangle with negative side lengths
      When I classify the triangle
-     Then there should be an error
+     Then there should be an error: "Side lengths must be positive."
