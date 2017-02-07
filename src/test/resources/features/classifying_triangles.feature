@@ -17,3 +17,8 @@ Feature: Classifying triangles
     Given I have a triangle with three equal sides
      When I classify the triangle
      Then the result should be "equilateral"
+
+  Scenario: Classifying an impossible triangle
+    Given I have a triangle which does not satisfy the triangle equalibrium
+     When I classify the triangle
+     Then there should be an error
