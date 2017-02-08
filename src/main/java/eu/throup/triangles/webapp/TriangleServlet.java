@@ -14,7 +14,12 @@ import java.nio.file.Paths;
 public class TriangleServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String content = parsedPageContent();
+        sendResponse(response, content);
+    }
+
+    private void sendResponse(HttpServletResponse response, String content) throws IOException {
         response.setContentType("text/html");
+        response.setCharacterEncoding("UTF-8");
         response.setStatus(HttpServletResponse.SC_OK);
         response.getWriter().println(content);
     }
@@ -24,6 +29,13 @@ public class TriangleServlet extends HttpServlet {
         double side2 = getParameter(request, "side2");
         double side3 = getParameter(request, "side3");
 
+        String result = calculateResult(side1, side2, side3);
+
+        String content = parsedPageContent(side1, side2, side3, result);
+        sendResponse(response, content);
+    }
+
+    private String calculateResult(double side1, double side2, double side3) {
         String result = "";
         try {
             Triangle triangle = new Triangle(side1, side2, side3);
@@ -45,11 +57,7 @@ public class TriangleServlet extends HttpServlet {
         } catch (IllegalArgumentException e) {
             result = e.getMessage();
         }
-
-        String content = parsedPageContent(side1, side2, side3, result);
-        response.setContentType("text/html");
-        response.setStatus(HttpServletResponse.SC_OK);
-        response.getWriter().println(content);
+        return result;
     }
 
     private double getParameter(HttpServletRequest request, String param) {
