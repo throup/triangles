@@ -15,6 +15,7 @@ public class NegativeSidesTest extends InvalidTriangleTest {
                 { 1, -1,  1},
                 {-1,  1,  1},
                 {-1, -1, -1},
+                {-3, -4, -5}, // (-3)² + (-4)² = (-5)², but negative sides are rejected by the constructor.
         });
     }
 

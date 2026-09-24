@@ -31,16 +31,18 @@ public class RightAngledTriangleTest {
                 { sqrt(2), 1, 1, ISOSCELES, true },
                 { 3, 4, 6, SCALENE, false },
                 { 2, 2, 2, EQUILATERAL, false },
-                // Within the tolerance used to compare sides.
+                // Within the tolerance used to compare sides; hypot(3, 4) is exactly 5.
                 { 3, 4, nextUp(5.0), SCALENE, true },
                 { 3, 4, nextDown(5.0), SCALENE, true },
                 // Close to, but outside, that tolerance.
                 { 3, 4, nextUp(nextUp(5.0)), SCALENE, false },
                 { 3, 4, nextDown(nextDown(5.0)), SCALENE, false },
                 { 1, 1, 1.41421356, ISOSCELES, false },
-                // Degenerate: no area, so no right angle.
+                // Degenerate. 1, 2, 3 has angles of 0°, 0° and 180°.
                 { 1, 2, 3, SCALENE, false },
+                // A zero side leaves the angles at its ends undefined; see Triangle.isRightAngled.
                 { 0, 1, 1, ISOSCELES, false },
+                { 1, 0, 1, ISOSCELES, false },
                 { 0, 0, 0, EQUILATERAL, false },
         });
     }

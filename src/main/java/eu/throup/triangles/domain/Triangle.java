@@ -61,14 +61,28 @@ public class Triangle {
     }
 
     /**
-     * Whether one angle of the triangle is a right angle. A triangle with a side of
-     * exactly zero length is never right-angled.
+     * Whether one angle of the triangle is a right angle. The constructor has already
+     * rejected any other input, so this only sees finite, non-negative sides that
+     * satisfy the triangle inequality.
+     * <p>
+     * A triangle with a side of zero length is never right-angled. The two corners at
+     * the ends of that side coincide, and the side lengths do not fix the angles there.
+     * Joining (0, 0) to (1, 0) and to a point at distance e in direction t gives a
+     * triangle with an angle t whose sides tend to 0, 1 and 1 as e shrinks, whatever t
+     * is. The isosceles triangles e, 1, 1, whose base angles tend to 90°, are one route
+     * to 0, 1, 1 among many.
      */
     public boolean isRightAngled() {
         double[] sides = {side1, side2, side3};
         Arrays.sort(sides);
+        double shortest = sides[0];
+        double middle = sides[1];
+        double longest = sides[2];
+        if (shortest == 0) {
+            return false;
+        }
         // hypot avoids the overflow and rounding of squaring the sides directly.
-        return sides[0] > 0 && sidesEqual(hypot(sides[0], sides[1]), sides[2]);
+        return sidesEqual(hypot(shortest, middle), longest);
     }
 
     private boolean isEquilateral() {
