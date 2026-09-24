@@ -1,6 +1,6 @@
 package eu.throup.triangles.cucumber.steps;
 
-import cucumber.api.java8.En;
+import io.cucumber.java8.En;
 import eu.throup.triangles.cucumber.TestHelper;
 
 public class ClassifyTheTriangle implements En {

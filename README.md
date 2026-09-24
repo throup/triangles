@@ -50,20 +50,22 @@ example, running in Jetty or Tomcat.
 A Maven goal exists to compile and launch the web application with Jetty:
 
 ```
-$ mvn jetty:run-war
+$ ./mvnw jetty:run-war
 ```
 
 This should lead to the application running on http://localhost:8080/ .
 
 ## Development
-The project includes a full set of JUnit tests and Cucumber features. To execute the full test suite, you may use Maven:
+The project builds with JDK 25 through the Maven wrapper, so no Maven
+installation is needed. The project includes a full set of JUnit tests and
+Cucumber features. To execute the full test suite:
 
 ```
-$ mvn test
+$ ./mvnw test
 ```
 
 To compile and package as a WAR package:
 
 ```
-$ mvn package
+$ ./mvnw package
 ```

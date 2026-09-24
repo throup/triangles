@@ -1,7 +1,7 @@
 package eu.throup.triangles.cucumber.hooks;
 
-import cucumber.api.Scenario;
-import cucumber.api.java8.En;
+import io.cucumber.java8.Scenario;
+import io.cucumber.java8.En;
 import eu.throup.triangles.cucumber.TestHelper;
 import eu.throup.triangles.cucumber.TestServer;
 
