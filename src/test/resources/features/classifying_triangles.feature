@@ -32,3 +32,13 @@ Feature: Classifying triangles
     Given I have a triangle with non-finite side lengths
      When I classify the triangle
      Then there should be an error: "Side lengths must be finite numbers."
+
+  Scenario: Classifying a scalene right-angled triangle
+    Given I have a triangle with sides 3, 4 and 5
+     When I classify the triangle
+     Then the result should be "scalene and right-angled"
+
+  Scenario: Classifying an isosceles right-angled triangle
+    Given I have a triangle with sides 1, 1 and 1.4142135623730951
+     When I classify the triangle
+     Then the result should be "isosceles and right-angled"
