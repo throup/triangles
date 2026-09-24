@@ -1,5 +1,7 @@
 package eu.throup.triangles.domain;
 
+import java.util.Arrays;
+
 import static java.lang.Double.isFinite;
 import static java.lang.Math.*;
 
@@ -56,6 +58,17 @@ public class Triangle {
         } else {
             return Type.ISOSCELES;
         }
+    }
+
+    /**
+     * Whether one angle of the triangle is a right angle. A triangle with a side of
+     * exactly zero length is never right-angled.
+     */
+    public boolean isRightAngled() {
+        double[] sides = {side1, side2, side3};
+        Arrays.sort(sides);
+        // hypot avoids the overflow and rounding of squaring the sides directly.
+        return sides[0] > 0 && sidesEqual(hypot(sides[0], sides[1]), sides[2]);
     }
 
     private boolean isEquilateral() {

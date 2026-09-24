@@ -43,17 +43,22 @@ public class TriangleServlet extends HttpServlet {
             result = "The triangle is ";
             switch (triangle.classify()) {
                 case EQUILATERAL:
-                    result += "equilateral.";
+                    result += "equilateral";
                     break;
 
                 case ISOSCELES:
-                    result += "isosceles.";
+                    result += "isosceles";
                     break;
 
                 case SCALENE:
-                    result += "scalene.";
+                    result += "scalene";
                     break;
             }
+
+            if (triangle.isRightAngled()) {
+                result += " and right-angled";
+            }
+            result += ".";
         } catch (IllegalArgumentException e) {
             result = e.getMessage();
         }
